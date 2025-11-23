@@ -1,0 +1,128 @@
+.container {
+  container: form-cnt / inline-size;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 25px;
+}
+
+img {
+  object-position: start;
+  width: 50%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+
+  h2 {
+    all: unset;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2rem;
+    color: var(--primary-color);
+  }
+
+  span {
+    font-size: 0.7rem;
+    color: var(--primary-color);
+    opacity: 0.6;
+  }
+
+  .credentials {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+
+    label {
+      color: var(--primary-color);
+      opacity: 0.7;
+      font-size: 0.7rem;
+    }
+
+    .country-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+
+
+      select {
+        background-color: var(--white-color);
+        border: 2px solid var(--grey-color);
+        color: grey;
+        padding: 15px;
+        font-size: 0.7rem;
+      }
+    }
+
+    .payment-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .radios {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .radio-wrapper {
+          display: inline-flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 5px;
+
+          input[type="radio"] {
+            accent-color: var(--primary-color);
+            width: 1rem;
+            height: 1rem;
+          }
+
+          label {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+@container form-cnt (width < 1200px) {
+  img {
+    display: none;
+  }
+
+  .wrapper {
+    width: 100%;
+    align-self: end;
+    flex-direction: column;
+    align-items: center;
+
+    .credentials {
+      flex-direction: column;
+    }
+
+    form .payment-wrapper .radios {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+}

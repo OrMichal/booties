@@ -1,0 +1,23 @@
+.wrapper {
+  background: url("../../../img2/booties.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  box-sizing: border-box;
+  padding: 20px 0;
+}
+
+.heading {
+  margin: 0;
+}
+
+.paragraph {
+  color: grey;
+  opacity: 1;
+}

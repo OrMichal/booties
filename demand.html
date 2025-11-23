@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="./elements/Button/setup.js"></script>
+  <script src="./elements/SecondaryButton/setup.js"></script>
+  <script src="./elements/Input/setup.js"></script>
+  <script src="./elements/LabeledInput/setup.js"></script>
+
+  <script src="./components/utils/Header/setup.js"></script>
+  <script src="./components/utils/Footer/setup.js"></script>
+  <script src="./components/utils/Navbar/setup.js"></script>
+  <script src="./components/utils/Breadcrumps/setup.js"></script>
+  <script src="./components/sections/DemandForm/setup.js"></script>
+  <title>Title</title>
+</head>
+<body>
+  <x-header></x-header>
+  <div class="container">
+    <x-navbar></x-navbar>
+    <x-breadcrumps route="Domů/Poptávka"></x-breadcrumps>
+    <x-demand-form></x-demand-form>
+  </div>
+  <x-footer></x-footer>
+</body>
+</html>

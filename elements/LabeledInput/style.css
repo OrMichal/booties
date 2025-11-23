@@ -1,0 +1,22 @@
+div {
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+label {
+  color: var(--primary-color);
+  opacity: 0.7;
+  font-size: 0.7rem;
+}
+
+span {
+  display: none;
+  color: var(--accent-color);
+  font-size: 0.7rem;
+}
+
+div:has(x-input[invalid]) label {
+  display: inline;
+}

@@ -1,0 +1,20 @@
+input {
+  box-sizing: border-box;
+  border: 2px solid var(--grey-color);
+  padding: 15px 20px;
+  font-size: 0.8rem;
+  transition: ease 200ms;
+}
+
+.full-width {
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid var(--accent-color);
+}
+
+input:invalid {
+  color: var(--accent-color);
+}

@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.heading {
+  font-size: 1.7rem;
+}
+
+.heading > span {
+  color: var(--accent-color);
+}
+
+.heading > span > strong {
+  color: var(--primary-color);
+}
+
+
+.products {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+a {
+  all: unset;
+}

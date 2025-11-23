@@ -1,0 +1,17 @@
+button {
+  all: unset;
+  background-color: var(--accent-color);
+  border: none;
+  color: var(--white-color);
+  box-sizing: border-box;
+  padding: 15px 20px;
+  font-size: 0.8rem;
+  transition: ease 200ms;
+}
+
+button:hover {
+  background-color: var(--white-color);
+  color: var(--accent-color);
+  outline: 1px solid var(--accent-color);
+  cursor: pointer;
+}

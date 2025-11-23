@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="./elements/Button/setup.js"></script>
+  <script src="./elements/Input/setup.js"></script>
+
+  <script src="./components/utils/Header/setup.js"></script>
+  <script src="./components/utils/Footer/setup.js"></script>
+  <script src="./components/utils/Navbar/setup.js"></script>
+  <script src="./components/utils/LineBreak/setup.js"></script>
+  <script src="./components/utils/Motivation/setup.js"></script>
+  <script src="./components/utils/Breadcrumps/setup.js"></script>
+  <script src="./components/sections/ImageCarousel/setup.js"></script>
+  <script src="./components/sections/LikableProducts/setup.js"></script>
+  <script src="./components/sections/Categories/setup.js"></script>
+  <script src="./components/sections/OfferGrid/setup.js"></script>
+  <script src="./components/sections/ProductSection/setup.js"></script>
+  <script src="./components/cards/ProductCard/setup.js"></script>
+  <script src="./components/cards/ImageSelectorCard/setup.js"></script>
+  <title>Title</title>
+</head>
+<body>
+  <x-header></x-header>
+  <div class="container">
+    <x-navbar></x-navbar>
+    <x-breadcrumps route="Domů/Dívčí boty/Tenisky"></x-breadcrumps>
+    <x-product-section 
+      name="Benjamin Velcro Dark Grey"
+      company-img-src="./img2/logo.webp"
+      desc="Tyhle botky mají styl! Kožené barefoot tenisky vhodné na užší až normální nožku. Vyrobené z kvalitní hladké kůže v kombinaci s textilem. Tenká podešev přesahuje přes prsty, aby byla botka chráněna před poškozením."
+      old-price="699"
+      new-price="529"
+      prod-desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis nec sem nec accumsan. Vestibulum nec lectus tortor. Nunc dapibus mollis quam, vitae consequat libero convallis vitae. Pellentesque rhoncus dui non sodales fringilla. Nunc ut dui vehicula, pretium nisl vel, imperdiet eros. Integer vel mi et orci consectetur rhoncus. Nullam ut imperdiet justo. Curabitur eleifend cursus mauris. Vivamus ac orci pretium arcu mollis ullamcorper."
+      prod-section-subheading="Sed quia coknsequuntur"
+      prod-section-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis nec sem nec accumsan. Vestibulum nec lectus tortor. Nunc dapibus mollis quam, vitae consequatLorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis nec sem nec accumsan. Vestibulum nec lectus tortor. Nunc dapibus mollis quam, vitae consequat"
+      prod-desc-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis nec sem nec accumsan. Vestibulum nec lectus tortor. Nunc dapibus mollis quam, vitae consequat"
+      param-color="Tmavě modré"
+      param-kind="Do deště, turistické"
+      param-material="Guma"
+      param-aim="Chlapecké"
+      param-code="GB004-001"
+    ></x-product-section>
+    <x-linebreak></x-linebreak>
+    <x-likable-products></x-likable-products>
+    <x-linebreak></x-linebreak>
+    <x-motivation></x-motivation>
+  </div>
+  <x-footer></x-footer>
+</body>
+</html>
