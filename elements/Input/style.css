@@ -1,4 +1,7 @@
-input {
+div {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   box-sizing: border-box;
   border: 2px solid var(--grey-color);
   padding: 15px 20px;
@@ -6,11 +9,17 @@ input {
   transition: ease 200ms;
 }
 
+input {
+  border: none;
+  outline: none;
+  font-size: 0.8rem;
+}
+
 .full-width {
   width: 100%;
 }
 
-input:focus {
+div:has(input:focus) {
   outline: none;
   border: 2px solid var(--accent-color);
 }

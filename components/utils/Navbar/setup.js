@@ -27,9 +27,17 @@ class Navbar extends HTMLElement {
     div_market_options.classList = ["options"];
     div_navbar_nav.appendChild(div_market_options);
 
+    const form = document.createElement("form");
+    form.method = "GET";
+    form.action = "/search.php";
+
     const input = document.createElement("x-input");
     input.setAttribute("placeholder", "Vyhledat zboží...");
-    div_market_options.appendChild(input);
+    input.setAttribute("type", "text");
+    input.setAttribute("name", "searchQuery");
+    input.setAttribute("src", "./img/Group 4.png");
+    form.appendChild(input);
+    div_market_options.appendChild(form);
 
     const a_cart = document.createElement("a");
     a_cart.href = `#`;
