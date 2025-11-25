@@ -3,7 +3,7 @@ class XInput extends HTMLElement {
   static formAssociated = true;
 
   static get observedAttributes() {
-    return ["placeholder", "type", "name", "stretch", "value"];
+    return ["placeholder", "type", "name", "stretch", "value", "src", "label", "error-msg"];
   }
 
   constructor() {
@@ -18,12 +18,31 @@ class XInput extends HTMLElement {
     this.input = document.createElement("input");
     this.input.placeholder = this.getAttribute("placeholder") || "";
     this.input.type = this.getAttribute("type") || "text";
+    this.input.id = crypto.randomUUID();
+  
+    const wrapper = document.createElement("div");
+    wrapper.classList = ["wrapper"];
+
+    const label = document.createElement("label");
+    label.setAttribute("for", this.input.id);
 
     const div = document.createElement("div");
+    div.classList = ["input-wrapper"];
     const img = document.createElement("img");
     img.src = this.getAttribute("src");
+    img.onerror = () => {
+      img.classList.add("img-err");
+    };
+
     div.appendChild(img);
     div.appendChild(this.input);
+
+    const error_msg = document.createElement("span");
+    error_msg.classList = ["error-msg"];
+
+    wrapper.appendChild(label);
+    wrapper.appendChild(div);
+    wrapper.appendChild(error_msg);
 
     this.input.addEventListener("input", () => {
       this.value = this.input.value;
@@ -37,7 +56,7 @@ class XInput extends HTMLElement {
       }
     });
 
-    this.shadowRoot.append(link, div);
+    this.shadowRoot.append(link, wrapper);
   }
 
   attributeChangedCallback(name, _, value) {
@@ -46,6 +65,9 @@ class XInput extends HTMLElement {
     if (name === "name") this.input.name = value;
     if (name === "stretch") this.input.classList.add("full-width");
     if (name === "value") this.value = value;
+    if (name === "src") this.shadowRoot.querySelector("img").src = value;
+    if (name === "label") this.shadowRoot.querySelector("label").innerHTML = value;
+    if (name === "error-msg") this.shadowRoot.querySelector("span").innerHTML = value;
   }
 
   get value() {

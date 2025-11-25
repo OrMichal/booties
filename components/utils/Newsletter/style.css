@@ -21,3 +21,9 @@
   color: grey;
   opacity: 1;
 }
+
+form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

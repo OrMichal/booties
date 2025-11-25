@@ -1,27 +1,64 @@
-div {
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.input-wrapper {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
   box-sizing: border-box;
   border: 2px solid var(--grey-color);
   padding: 15px 20px;
   font-size: 0.8rem;
   transition: ease 200ms;
+  background-color: var(--white-color);
+}
+
+img {
+  filter: invert();
+  opacity: 0.5;
+  height: 1rem;
+}
+
+.img-err {
+  display: none;
 }
 
 input {
   border: none;
   outline: none;
   font-size: 0.8rem;
+  color: var(--primary-color);
+}
+
+label {
+  font-size: 0.7rem;
+  color: var(--primary-color);
+}
+
+.error-msg {
+  display: none;
+  font-size: 0.6rem;
+  color: var(--accent-color);
 }
 
 .full-width {
   width: 100%;
 }
 
-div:has(input:focus) {
+.input-wrapper:has(input:focus) {
   outline: none;
+  border: 2px solid var(--primary-color);
+}
+
+.input-wrapper:has(input:invalid) {
   border: 2px solid var(--accent-color);
+}
+
+.wrapper:has(input:invalid) .error-msg {
+  display: inline;
 }
 
 input:invalid {

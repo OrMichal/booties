@@ -32,46 +32,47 @@ class XDemandForm extends HTMLElement {
     div.appendChild(span);
 
     const form = document.createElement("form");
-    form.method = `POST`;
+    form.method = `GET`;
+    form.action = "/demand.php";
     div.appendChild(form);
 
     const credentials = document.createElement("div");
     credentials.classList = ["credentials"];
     form.appendChild(credentials);
 
-    const credentials_name = document.createElement("x-labeled-input");
+    const credentials_name = document.createElement("x-input");
     credentials_name.setAttribute("label", "Jméno");
     credentials_name.setAttribute("name", "firstname");
     credentials_name.setAttribute("type", "text");
     credentials_name.setAttribute("placeholder", "Zadejte své jméno");
-    credentials_name.setAttribute("invalid-text", "Jméno není ve správném formátu");
+    credentials_name.setAttribute("error-msg", "Jméno není ve správném formátu");
 
-    const credentials_surname = document.createElement("x-labeled-input");
+    const credentials_surname = document.createElement("x-input");
     credentials_surname.setAttribute("label", "Příjmení");
     credentials_surname.setAttribute("name", "surname");
     credentials_surname.setAttribute("placeholder", "Zadejte své příjmení");
     credentials_surname.setAttribute("type", "text");
-    credentials_surname.setAttribute("invalid-text", "Zadané jméno není ve správném formátu");
+    credentials_surname.setAttribute("error-msg", "Zadané jméno není ve správném formátu");
 
     credentials.appendChild(credentials_name);
     credentials.appendChild(credentials_surname);
 
-    const email = document.createElement("x-labeled-input");
+    const email = document.createElement("x-input");
     email.setAttribute("label", "Email");
     email.setAttribute("type", "email");
     email.setAttribute("placeholder", "Zadejte svůj email");
     email.setAttribute("name", "email");
-    email.setAttribute("invalid-text", "Email není ve správném formátu");
+    email.setAttribute("error-msg", "Email není ve správném formátu");
 
     form.appendChild(email);
 
 
-    const phone = document.createElement("x-labeled-input");
+    const phone = document.createElement("x-input");
     phone.setAttribute("label", "Telefon");
     phone.setAttribute("type", "tel");
     phone.setAttribute("placeholder", "Zadejte svoje telefonní číslo");
     phone.setAttribute("name", "telephone");
-    phone.setAttribute("invalid-text", "Telefonní číslo není ve správném formátu");
+    phone.setAttribute("error-msg", "Telefonní číslo není ve správném formátu");
 
     form.appendChild(phone);
 
@@ -81,6 +82,7 @@ class XDemandForm extends HTMLElement {
 
     const country_div_select = document.createElement("select");
     country_div_select.id = `select-country`;
+    country_div_select.name = "country";
 
     [
       { value: "", name: "Vyberte zemi" },
@@ -145,6 +147,7 @@ class XDemandForm extends HTMLElement {
 
     const button_next = document.createElement("x-button");
     button_next.innerHTML = `Pokračovat`;
+    button_next.setAttribute("type", "submit");
     buttons_div.appendChild(button_next);
 
     this.shadowRoot.appendChild(css_link);

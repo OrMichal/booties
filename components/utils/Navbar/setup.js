@@ -35,7 +35,7 @@ class Navbar extends HTMLElement {
     input.setAttribute("placeholder", "Vyhledat zboží...");
     input.setAttribute("type", "text");
     input.setAttribute("name", "searchQuery");
-    input.setAttribute("src", "./img/Group 4.png");
+    input.setAttribute("src", "./img/loupe.png");
     form.appendChild(input);
     div_market_options.appendChild(form);
 
@@ -43,13 +43,16 @@ class Navbar extends HTMLElement {
     a_cart.href = `#`;
     const a_cart_img = document.createElement("img");
     a_cart.appendChild(a_cart_img);
-    a_cart_img.src = `./img/heart.png`;
+    a_cart_img.src = `./img/cart.png`;
+    a_cart_img.classList = ["icon"];
     div_market_options.appendChild(a_cart);
 
     const a_heart = document.createElement("a");
     a_heart.href = `#`;
     const a_heart_img = document.createElement("img");
+    a_heart.append(a_heart_img);
     a_heart_img.src = `./img/heart.png`;
+    a_heart_img.classList = ["icon"];
     div_market_options.appendChild(a_heart);
 
 

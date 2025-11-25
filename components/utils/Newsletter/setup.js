@@ -27,15 +27,23 @@ class Newsletter extends HTMLElement {
     div_interaction.classList =  ["interactions"];
     div_newsletter.appendChild(div_interaction);
 
+    const form = document.createElement("form");
+    form.method = "GET";
+    form.action = "/newsletter.php";
+
     const input = document.createElement("x-input");
     input.setAttribute("placeholder", `Zadejte svůj email...`);
     input.setAttribute("type", "email");
-    div_interaction.appendChild(input);
+    input.setAttribute("name", "email");
+    input.setAttribute("src", "./img/6.png");
 
     const button = document.createElement("x-button");
     button.setAttribute("type", "button");
     button.innerHTML = `přihlásit`;
-    div_interaction.appendChild(button);
+
+    form.appendChild(input);
+    form.appendChild(button);
+    div_interaction.appendChild(form);
 
     this.shadowRoot.appendChild(link);
     this.shadowRoot.appendChild(div_newsletter);

@@ -17,6 +17,6 @@ span {
   font-size: 0.7rem;
 }
 
-div:has(x-input[invalid]) label {
+div:has(x-input:invalid) label {
   display: inline;
 }
