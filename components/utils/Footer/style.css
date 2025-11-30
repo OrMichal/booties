@@ -12,9 +12,10 @@
 
 .wrapper > section:nth-child(1) {
   flex: 2;
+  box-sizing: border-box;
   background-color: var(--accent-color);
   padding-left: calc(calc(100% - var(--max-width)) / 2);
-  padding-right: 40px;
+  padding-right: 20px;
   padding-bottom: 30px;
 
   display: flex;
@@ -24,11 +25,12 @@
 
 .wrapper > section:nth-child(2) {
   flex: 1;
+  box-sizing: border-box;
   background-color: var(--primary-color);
   padding-right: calc(calc(100% - var(--max-width)) / 2);
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
 
 .basic-info-wrapper {
@@ -129,7 +131,7 @@ a:hover {
 
   .wrapper > section:first-child {
     width: 100%;
-    padding-left: 50px;
+    padding-left: 20px;
     flex-direction: column;
     gap: 30px;
   }

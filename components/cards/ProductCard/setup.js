@@ -16,6 +16,14 @@ class XProductCard extends HTMLElement {
     const div_card = document.createElement("div");
     div_card.classList = ["card"];
 
+    this._slideObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("slide-in");
+        }
+      });
+    }, { threshold: 0 });
+
     const img = document.createElement("img");
     img.src = this.getAttribute("image-src");
     img.alt = `product ${this.getAttribute("name")} image`;
@@ -42,6 +50,8 @@ class XProductCard extends HTMLElement {
 
     this.shadowRoot.appendChild(css_link);
     this.shadowRoot.appendChild(div_card);
+
+    this._card = div_card;
   }
 
   attributeChangedCallback(name, _, newValue) {
@@ -64,6 +74,16 @@ class XProductCard extends HTMLElement {
       case "new-price":
         this.shadowRoot.querySelector(".new-price").textContent = `${newValue} Kč`;
         break;
+    }
+  }
+
+  connectedCallback() {
+    if(this._card) this._slideObserver.observe(this._card);
+  }
+
+  disconnectedCallback() {
+    if(this._slideObserver && this._card){
+      this._slideObserver.unobserve(this._card);
     }
   }
 }

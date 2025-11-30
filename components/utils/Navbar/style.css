@@ -46,6 +46,7 @@
   flex-direction: row;
   gap: 10px;
   justify-content: center;
+  font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
 .section:hover {
@@ -73,4 +74,12 @@ a {
     display: none;
   }
 
+}
+
+@container navbar-cnt (width < 400px) {
+  .sections {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
 }

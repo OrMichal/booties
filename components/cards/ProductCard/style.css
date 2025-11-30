@@ -60,3 +60,17 @@
   color: var(--grey-color);
   text-decoration: line-through;
 }
+
+.slide-in {
+  animation: forwards ease 600ms slide-in;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  } to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}

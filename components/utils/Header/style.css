@@ -40,7 +40,7 @@
 }
 
 .icon-text {
-  font-size: 1rem;
+  font-size: clamp(0.7rem, 2vw, 1rem);
   position: relative;
   display: inline-flex;
   flex-direction: row;
@@ -59,11 +59,24 @@ a:hover {
 }
 
 @container header-cnt (width < 1200px) {
+  .content > * {
+    padding: 0px 20px;
+  }
+
   .content > .icon-text > a {
     display: none;
   }
 
   .content > .contacts .icon {
     display: none;
+  }
+
+  .content > .contacts > *::after {
+    display: none;
+  }
+
+  .content > .contacts {
+    flex-direction: column;
+    gap: 3px;
   }
 }
