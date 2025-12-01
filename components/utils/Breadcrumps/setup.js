@@ -13,7 +13,7 @@ class XBreadcrumps extends HTMLElement {
           
           for(const crump of crumps.slice(0, crumps.length - 1)) {
             const a = document.createElement("a");
-            a.href = `#${crump}`;
+            a.href = `./index.html`;
             a.innerHTML = `${crump}`;
             div.appendChild(a);
           }

@@ -19,7 +19,7 @@
 }
 
 .paragraph {
-  color: grey;
+  color: hsl(from var(--grey-color) h s calc(l - 60));
   opacity: 1;
 }
 

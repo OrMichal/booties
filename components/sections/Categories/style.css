@@ -18,7 +18,7 @@
 .card .text {
   width: 60%;
   position: absolute;
-  font-size: clamp(0.7rem, 2vw, 1rem);
+  font-size: clamp(0.8rem, 2vw, 1.1rem);
   color: var(--primary-color);
   left: 20px;
   top: 50%;

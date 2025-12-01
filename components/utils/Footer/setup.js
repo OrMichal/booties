@@ -39,7 +39,7 @@ class Footer extends HTMLElement {
 
     const div_info_about_p = document.createElement("p");
     div_info_about_p.classList = ["info-article"];
-    div_info_about_p.innerHTML = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam augue, commodo ut est eget, lacinia facilisis metus. Aliquam in diam et lorem porta sodales vitae nec justo. Fusce non tristique magna. Suspendisse vulputate sit amet libero ut dignissim. Vivamus tincidunt libero vitae odio dapibus, nec lacinia lorem rutrum. Nullam eu nulla non urna sodales sodales. Etiam in egestas velit. Praesent tincidunt porttitor ornare. Maecenas ut ultrices dui. Aliquam blandit lobortis elit, ut cursus arcu porta nec. Curabitur tincidunt consequat nisi, sit amet ornare massa scelerisque eleifend. Ut molestie rutrum consectetur. Vestibulum tellus risus, efficitur quis euismod finibus, porttitor quis libero. Sed eu pharetra metus. Cras dignissim ac nisi et tincidunt. `;
+    div_info_about_p.innerHTML = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam diam augue, commodo ut est eget, lacinia facilisis metus. Aliquam in diam et lorem porta sodales vitae nec justo. Fusce non tristique magna. Suspendisse vulputate sit amet libero ut dignissim. Vivamus tincidunt libero vitae odio dapibus, nec lacinia lorem rutrum. Nullam eu nulla non urna sodales sodales. Etiam in egestas velit. Praesent tincidunt porttitor ornare. Maecenas ut ultrices dui. Aliquam blandit lobortis elit, ut cursus arcu porta nec.`;
     div_info_about.appendChild(div_info_about_p);
 
     const div_info_about_img = document.createElement("img");
@@ -163,7 +163,11 @@ class Footer extends HTMLElement {
       const img = document.createElement("img");
       img.src = s;
       img.classList = ["icon"];
-      div_contacts_socials.appendChild(img);
+
+      const a = document.createElement("a");
+      a.href = "#";
+      a.appendChild(img);
+      div_contacts_socials.appendChild(a);
     });
 
     const section_contacts_a_address = document.createElement("a");

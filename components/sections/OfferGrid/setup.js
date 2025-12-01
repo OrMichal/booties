@@ -40,7 +40,7 @@ class XOfferGrid extends HTMLElement {
 
     prods.forEach(p => {
       const a = document.createElement("a");
-      a.href = `#`;
+      a.href = `./product.html`;
       const prod = document.createElement("x-product-card");
       prod.setAttribute("image-src", p.src);
       prod.setAttribute("name", p.name);
