@@ -100,8 +100,10 @@ class XProductSection extends HTMLElement {
     });
     div_info.appendChild(img_selector_card);
 
-    const div_info_data = document.createElement("div");
+    const div_info_data = document.createElement("form");
     div_info_data.classList = ["info-data-wrapper"];
+    div_info_data.action = "product.php";
+    div_info_data.method = "GET";
     div_info.appendChild(div_info_data);
 
     const first_section = document.createElement("section");
@@ -137,14 +139,22 @@ class XProductSection extends HTMLElement {
     const second_section_color_div_colors = document.createElement("div");
     second_section_color_div_colors.classList = ["radios"];
 
-    for(let i = 0; i < 5; i++) {
+    for(const c of [
+      { name: "dark_blue" },
+      { name: "black" },
+      { name: "red" },
+      { name: "light_blue" },
+      { name: "green" },
+    ]) {
       const color = document.createElement("div");
       color.classList = ["radio-wrapper"];
 
       const radio = document.createElement("input");
       radio.type = "radio";
       radio.name = "color";
-      radio.id = `radio-color-${i}`;
+      const id = crypto.randomUUID();
+      radio.id = id;
+      radio.value = c.name;
 
       const fake_radio = document.createElement("label");
       fake_radio.classList = ["fake-radio"];
@@ -171,6 +181,7 @@ class XProductSection extends HTMLElement {
       const radio = document.createElement("input");
       radio.type = "radio";
       radio.name = "size";
+      radio.value = i;
       radio.id = i;
 
       if(i == 22) radio.disabled = true;
